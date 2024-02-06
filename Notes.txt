@@ -1,0 +1,85 @@
+Day 1 31/01/2024
+
+In this session we learnt some basics of how to excel the typing speed by using various 
+keyboard shortcuts and commands in Intellij IDEA tool.
+
+Day 2 & 3 01 & 02 
+Git:
+- Git is a smart helper for coders, tracking changes in code for smooth collaboration.
+- Developed by Linus Torvalds, it manages work among multiple contributors.
+
+Importance of Git:
+- Enables collaboration on projects.
+- Tracks code changes for issue identification and resolution.
+- Facilitates version control, managing different software versions.
+
+branching:
+- Involves creating separate development lines for features or bug fixes.
+- Isolates changes, preventing interference until integration.
+
+merging:
+- Combines changes from one branch into another.
+- Typically merges feature branches into the main branch.
+
+Types of Version Control:
+- Centralized Version Control System (CVCS)
+- Distributed Version Control System (DVCS)
+
+Difference Between Distributed and Centralized VCS:
+- Centralized VCS manages version control on a central server.
+- Distributed VCS like Git provides flexibility with complete copies for each developer.
+
+Why Git is Required:
+- Enables collaborative development.
+- Efficient version control.
+- Supports branching, merging, and collaboration.
+what is a Repo:
+- A storage space for project history and files, often hosted on platforms like GitHub.
+
+Types of Repos
+- Public: Accessible by anyone.
+- Private: Limited access, typically for sensitive projects.
+
+working Directory:
+
+Staging Area:
+- An intermediate area where changes are marked for the next commit.
+
+Commit History:
+- A record of all commits with changes, authors, and timestamps.
+
+Origin Repository:
+- The default name for the remote repository where your local repository connects.
+
+fork:
+- Creates a personal copy of someone else's project on GitHub.
+
+Difference Between Centralized and Distributed VCS:
+- Centralized VCS has a single central repository.
+- Distributed VCS gives each user a complete repository copy.
+
+Difference Between Git and GitHub:
+- Git is a version control system.
+- GitHub hosts Git repositories with collaboration features.
+
+trunk-Based vs. Branch-Based Development:
+- Trunk-Based integrates code frequently into the main branch.
+- Branch-Based uses feature branches and merges them later.
+
+feature Toggle:
+- A mechanism to enable or disable features during runtime without changing the code.
+
+Scenario for Branch-Based and Trunk-Based Development:
+- Branch-Based is suitable for large, long-term changes.
+- Trunk-Based is suitable for frequent, smaller changes.
+
+
+Day 4 : 05/02/24
+
+how to create a repo
+how to create a branch
+
+task
+
+create a branch vcs
+add code file and then merge to main
