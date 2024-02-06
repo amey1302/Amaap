@@ -1,1 +1,1 @@
-## This is vcs branch under the Amaap Repo
+## Amaap Session Notes
