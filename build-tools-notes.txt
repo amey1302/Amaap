@@ -1,1 +1,44 @@
+Day 5 : 06-02-2024 8:30 pm
+
+**new topic **
+Build Tools: it is software tool that automates process of
+compiling code, managing depedencies, creating exe out of source code.
+Comipling code: 
+
+creating executable out of source code: creating jar out of java file
+
+
+Key objectives of build tools :
+1. Automate Compilation
+2. Manage Depedencies
+3. Task Automation : to check whether each test cases are working, to ensure that the updated code is working
+4. Provide Structured lifecycle: 
+	- adding feature
+	- compile
+	- run all the test methods
+	- Create executable
+
+**Problems solved by this build tools:
+- reduce complexity in compilation
+- reduce inconsistencies
+- reduce repetitive tasks
+
+Build Tools
+1. Gradle
+2. Maven
+3. Ant
+
+task :
+create branch buildtool 
+
+one example of pull, cherry-pick
+
+
+
+Problem statement: 
+consider a project with db connectivity 
+steps to do this:
+
+1. download the JDBC driver(connector) from the server
+2. Import and use it inside the application
 
