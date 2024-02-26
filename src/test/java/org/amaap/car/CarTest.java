@@ -27,8 +27,8 @@ public class CarTest {
     }
     @Test
     void shouldAbleToReturnDistanceToEmpty() throws overFlowException, InsufficientFuelException {
-        car.refill(30); // 360km
-        int fuel = car.drive(240); //20l
+        car.refill(30);
+        int fuel = car.drive(240);
         int distance = car.distanceToEmpty(fuel,12);
         assertEquals(120,distance);
     }
@@ -52,8 +52,8 @@ public class CarTest {
     }
     @Test
     void shouldAbleToThrowExceptionForInsufficientFuel() throws overFlowException, InsufficientFuelException {
-        car.refill(40); // 480
-        car.drive(360); //30
+        car.refill(40);
+        car.drive(360);
         assertThrows(InsufficientFuelException.class ,()->{
             car.drive(150);
         });
