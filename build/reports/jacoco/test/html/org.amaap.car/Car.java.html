@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Car.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CarFuel</a> &gt; <a href="index.source.html" class="el_package">org.amaap.car</a> &gt; <span class="el_source">Car.java</span></div><h1>Car.java</h1><pre class="source lang-java linenums">package org.amaap.car;
+
+import javax.naming.InsufficientResourcesException;
+
+public class Car {
+
+    int fuelCapacity;
+    int avg;
+<span class="fc" id="L9">    int distanceCovered = 0;</span>
+<span class="fc" id="L10">    int distanceEmpty = 0;</span>
+<span class="fc" id="L11">    int fuelInLiter = 0;</span>
+
+<span class="fc" id="L13">    Car(int fuelCapacity, int avg) {</span>
+<span class="fc" id="L14">        this.fuelCapacity = fuelCapacity;</span>
+<span class="fc" id="L15">        this.avg = avg;</span>
+
+<span class="fc" id="L17">    }</span>
+
+    public int getFuelCapacity() {
+<span class="fc" id="L20">        return fuelCapacity;</span>
+    }
+
+    public int getAvg() {
+<span class="fc" id="L24">        return avg;</span>
+    }
+
+    public int getDistanceCovered() {
+<span class="fc" id="L28">        return distanceCovered;</span>
+    }
+
+    public int getDistanceEmpty() {
+<span class="fc" id="L32">        return distanceEmpty;</span>
+    }
+
+    public int getFuelInLiter() {
+<span class="fc" id="L36">        return fuelInLiter;</span>
+    }
+
+    public int refill(int fuel) throws overFlowException {
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        if(isFuelOverfilled(fuel,fuelInLiter)){</span>
+<span class="fc" id="L41">            fuelInLiter += fuel;</span>
+
+        }
+        else{
+<span class="fc" id="L45">            throw new overFlowException(&quot;Refill is more than Fuel Capacity&quot;);</span>
+        }
+
+
+<span class="fc" id="L49">        return fuelInLiter;</span>
+    }
+    private boolean isFuelOverfilled(int fuel, int fuelInLiter){
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        return  (fuelInLiter + fuel) &lt;= fuelCapacity;</span>
+
+
+    }
+
+    public int distanceToEmpty(int fuelInLiter, int avg) {
+<span class="fc" id="L58">        return (fuelInLiter * avg);</span>
+
+    }
+
+    public int drive(int distance) throws InsufficientFuelException {
+<span class="fc" id="L63">        int fuelRequired = distance / avg; // 240 / 12 = 20</span>
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        if(fuelRequired &lt;= fuelInLiter){</span>
+<span class="fc" id="L65">            fuelInLiter -= fuelRequired;</span>
+<span class="fc" id="L66">            distanceCovered +=  distance;</span>
+        }
+        else{
+<span class="fc" id="L69">            throw new InsufficientFuelException(&quot;Fuel is Enough to Drive &quot;+distanceToEmpty(fuelInLiter,avg) +&quot; km&quot;);</span>
+
+        }
+<span class="fc" id="L72">        return fuelInLiter;</span>
+
+    }
+
+//    public static void main(String[] args) throws overFlowException {
+//        Car car = new Car(40,12);
+//        System.out.println(car.getFuelInLiter());
+//
+//        System.out.println(car.refill(30));
+//        System.out.println(car.getDistanceCovered());
+//        System.out.println(&quot;FuelInLiter after driving 240km : &quot;+car.drive(240)+&quot; l&quot;);
+//        System.out.println(car.distanceToEmpty(car.getFuelInLiter(), car.getAvg())+&quot; km&quot;);
+//
+//        //System.out.println(car.isFuelOverfilled(100, car.getFuelInLiter()));
+//
+//
+//
+//    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
