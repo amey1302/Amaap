@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Lift.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">RomanNumeralsKata</a> &gt; <a href="index.source.html" class="el_package">org.amaap.liftkata</a> &gt; <span class="el_source">Lift.java</span></div><h1>Lift.java</h1><pre class="source lang-java linenums">package org.amaap.liftkata;
+
+import static java.lang.Thread.sleep;
+
+public class Lift {
+
+    private int totalFloor;
+    private int maxCapacity;
+    private int currentFloor;
+    private boolean doorCondition;
+
+    private int liftDirection;
+
+    public boolean dingMessage;
+
+
+<span class="fc" id="L17">    public Lift(int totalFloor, int maxCapacity) {</span>
+<span class="fc" id="L18">        this.totalFloor = totalFloor;</span>
+<span class="fc" id="L19">        this.maxCapacity = maxCapacity;</span>
+<span class="fc" id="L20">        currentFloor = 0;</span>
+<span class="fc" id="L21">        doorCondition = false;</span>
+<span class="fc" id="L22">        liftDirection = 1;</span>
+<span class="fc" id="L23">        dingMessage = false;</span>
+
+<span class="fc" id="L25">    }</span>
+
+    public int getTotalFloor() {
+<span class="fc" id="L28">        return totalFloor;</span>
+    }
+
+    public int getLiftDirection() {
+<span class="fc" id="L32">        return liftDirection;</span>
+    }
+
+    public void setLiftDirection(int liftDirection) {
+<span class="fc" id="L36">        this.liftDirection = liftDirection;</span>
+<span class="fc" id="L37">    }</span>
+
+//    public void setTotalFloor(int totalFloor) {
+//        this.totalFloor = totalFloor;
+//    }
+
+    public int getMaxCapacity() {
+<span class="fc" id="L44">        return maxCapacity;</span>
+    }
+
+//    public void setMaxCapacity(int maxCapacity) {
+//        this.maxCapacity = maxCapacity;
+//    }
+
+    public int getCurrentFloor() {
+<span class="fc" id="L52">        return currentFloor;</span>
+    }
+
+    public void setCurrentFloor(int currentFloor) {
+<span class="fc" id="L56">        this.currentFloor = currentFloor;</span>
+<span class="fc" id="L57">    }</span>
+
+    public boolean isDoorCondition() {
+<span class="fc" id="L60">        return doorCondition;</span>
+    }
+
+    public void setDoorCondition(boolean doorCondition) {
+<span class="fc" id="L64">        this.doorCondition = doorCondition;</span>
+<span class="fc" id="L65">    }</span>
+
+
+    public void callLift(int sourceFloor, int destinationFloor, int passenger) throws BeyondCapacaityException, InterruptedException {
+<span class="fc bfc" id="L69" title="All 2 branches covered.">        if (passenger &gt; maxCapacity) {</span>
+<span class="fc" id="L70">            throw new BeyondCapacaityException(&quot;Max capacity reached&quot;);</span>
+        }
+
+<span class="fc bfc" id="L73" title="All 2 branches covered.">        if (sourceFloor &gt; destinationFloor) {</span>
+<span class="fc" id="L74">            setLiftDirection(-1);</span>
+<span class="fc" id="L75">            liftDirection = -1;</span>
+        } else {
+<span class="fc" id="L77">            setLiftDirection(1);</span>
+<span class="fc" id="L78">            liftDirection = 1;</span>
+        }
+
+<span class="fc" id="L81">        setCurrentFloor(sourceFloor);</span>
+<span class="pc bpc" id="L82" title="1 of 2 branches missed.">        if (currentFloor == sourceFloor) {</span>
+<span class="fc" id="L83">            setDoorCondition(true);</span>
+//            System.out.println(&quot;Ding!&quot;);
+//            System.out.println(&quot;Door is Open&quot;);
+
+        }
+
+<span class="fc" id="L89">        setDoorCondition(false);</span>
+//        System.out.println(&quot;Ding!&quot;);
+//        System.out.println(&quot;Door is closed&quot;);
+
+
+
+<span class="fc" id="L95">        setCurrentFloor(destinationFloor);</span>
+        //System.out.println(&quot;you have reached destination!&quot;);
+<span class="pc bpc" id="L97" title="1 of 2 branches missed.">        if (destinationFloor == currentFloor) {</span>
+<span class="fc" id="L98">            dingMessage = true;</span>
+        }
+
+<span class="fc" id="L101">    }</span>
+
+
+    //Todo: Multiple
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

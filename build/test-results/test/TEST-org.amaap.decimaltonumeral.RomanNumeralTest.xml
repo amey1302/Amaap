@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.amaap.decimaltonumeral.RomanNumeralTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-03-03T06:05:38" hostname="LAPTOP-205J7BQ6" time="0.032">
+<testsuite name="org.amaap.decimaltonumeral.RomanNumeralTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-03-04T06:18:40" hostname="LAPTOP-205J7BQ6" time="0.057">
   <properties/>
-  <testcase name="shouldReturnExpectedRomanNumeralForGivenInteger()" classname="org.amaap.decimaltonumeral.RomanNumeralTest" time="0.027"/>
-  <testcase name="shouldThrowExceptionForIntegerLessThanEqualToZero()" classname="org.amaap.decimaltonumeral.RomanNumeralTest" time="0.003"/>
+  <testcase name="shouldReturnExpectedRomanNumeralForGivenInteger()" classname="org.amaap.decimaltonumeral.RomanNumeralTest" time="0.051"/>
+  <testcase name="shouldThrowExceptionForIntegerLessThanEqualToZero()" classname="org.amaap.decimaltonumeral.RomanNumeralTest" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

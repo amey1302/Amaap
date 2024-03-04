@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LiftApp.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">RomanNumeralsKata</a> &gt; <a href="index.source.html" class="el_package">org.amaap.liftkata</a> &gt; <span class="el_source">LiftApp.java</span></div><h1>LiftApp.java</h1><pre class="source lang-java linenums">package org.amaap.liftkata;
+
+import java.util.Scanner;
+
+<span class="nc" id="L5">public class LiftApp {</span>
+    public static void main(String[] args) throws BeyondCapacaityException, InterruptedException {
+<span class="nc" id="L7">        Scanner scanner = new Scanner(System.in);</span>
+<span class="nc" id="L8">        Lift lift = new Lift(5, 8);</span>
+<span class="nc" id="L9">        System.out.println(&quot;Select from Menu\n1.Use a Lift\n2.Use Steps&quot;);</span>
+<span class="nc" id="L10">        int choice = scanner.nextInt();</span>
+<span class="nc bnc" id="L11" title="All 2 branches missed.">        if (choice == 1) {</span>
+<span class="nc" id="L12">            System.out.println(&quot;Select from Below:\n1.Call the Lift\n2.Current Floor&quot;);</span>
+<span class="nc" id="L13">            int operation = scanner.nextInt();</span>
+<span class="nc bnc" id="L14" title="All 3 branches missed.">            switch (operation) {</span>
+                case 1:
+<span class="nc" id="L16">                    System.out.println(&quot;On which floor you are??&quot;);</span>
+<span class="nc" id="L17">                    int sourceFloor = scanner.nextInt();</span>
+<span class="nc" id="L18">                    System.out.println(&quot;Which Floor you want to go?&quot;);</span>
+<span class="nc" id="L19">                    int destinationFloor = scanner.nextInt();</span>
+<span class="nc" id="L20">                    System.out.println(&quot;No of Passengers?&quot;);</span>
+<span class="nc" id="L21">                    int passengers = scanner.nextInt();</span>
+<span class="nc" id="L22">                    lift.callLift(sourceFloor,destinationFloor,passengers);</span>
+<span class="nc" id="L23">                    break;</span>
+                case 2:
+<span class="nc" id="L25">                    System.out.println(&quot;Current Floor is : &quot; +lift.getCurrentFloor());</span>
+                    break;
+
+            }
+        }
+<span class="nc" id="L30">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
